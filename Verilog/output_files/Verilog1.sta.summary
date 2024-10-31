@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -32.654
+TNS   : -304.131
+
+Type  : Slow 1200mV 85C Model Setup 'Verilog1:inst|estado_atual.Desligado'
+Slack : -4.010
+TNS   : -4.010
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.407
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Verilog1:inst|estado_atual.Desligado'
+Slack : 2.906
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -80.100
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Verilog1:inst|estado_atual.Desligado'
+Slack : 0.466
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -29.484
+TNS   : -270.060
+
+Type  : Slow 1200mV 0C Model Setup 'Verilog1:inst|estado_atual.Desligado'
+Slack : -3.592
+TNS   : -3.592
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.365
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Verilog1:inst|estado_atual.Desligado'
+Slack : 2.682
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -80.100
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Verilog1:inst|estado_atual.Desligado'
+Slack : 0.432
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -15.259
+TNS   : -126.160
+
+Type  : Fast 1200mV 0C Model Setup 'Verilog1:inst|estado_atual.Desligado'
+Slack : -1.778
+TNS   : -1.778
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.189
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Verilog1:inst|estado_atual.Desligado'
+Slack : 1.690
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -66.598
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Verilog1:inst|estado_atual.Desligado'
+Slack : 0.394
+TNS   : 0.000
+
+------------------------------------------------------------

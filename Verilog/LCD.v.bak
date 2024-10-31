@@ -1,0 +1,57 @@
+module LCD(clk, R, SR, SSA,RA, SSB, RB, OP, en, rs, rw, data);
+
+input reg [15:0] R; // saida do resultado
+input reg SR; // sinal da saida
+input reg SSA, SSB; // sinais de saida das entradas
+input reg [7:0] RA, RB; // saidas dos inputs
+input reg[7:0] OP; // saida do operador (caracter)
+
+output reg en, rs, rw;
+output reg[15:0] data_R;
+output reg[7:0] data_A, data_B, data_OP;
+
+reg[] instructions;
+
+//parameter linha_2 = 0, escrever = 1, pular_linha = 2, pular_espaço = 3, clear = 4, home = 5;//criar os parametros para instrução 
+
+integer dR, dRA, dRB;
+
+reg [31:0] counter = 0;
+parameter MS = 50_000;
+parameter WRITE = 0, WAIT = 1;
+reg [3:0] state = WRITE;
+
+reg [7:0] instructions = 0;
+
+initial 
+	begin
+	 data_A = 0;
+	 data_B = 0; 
+	 data_OP= 0;
+    data_R = 0;
+    EN = 0;
+    RW = 0;
+    RS = 0;
+	end
+	
+	always @(posedge clk) begin
+    case (state)
+        WRITE: begin
+            if (counter == MS - 1) begin
+                state <= WAIT; counter <= 0;
+            end else begin
+                counter <= counter + 1;
+            end
+        end
+        WAIT: begin
+            if (counter == MS - 1) begin
+                state <= WRITE; counter <= 0;
+                if (instructions < 20) instructions <= instructions + 1;
+            end else begin
+                counter <= counter + 1;
+            end
+        end
+
+        default: begin end
+    endcase 
+end

@@ -1,0 +1,152 @@
+module calculadora(A, B, ON_OFF, So, Sub, Mult, clk, R, RA, RB, OP);
+
+input [7:0] A, B; // entradas
+input ON_OFF, So, Sub, Mult; // botões de ligar/desligar e os das operações
+input clk;
+output reg[15:0] R; // saida do resultado
+output reg[7:0] RA, RB; // saidas dos inputs
+output reg[7:0] OP; // saida do operador (caracter)
+
+reg [2:0] estado_atual;
+parameter Desligado = 0, Ligado = 1, OpSoma = 2, OpMult = 3, OpSub = 4;
+integer tempo;
+
+always @ (*)
+begin
+    case(estado_atual)
+	 
+        Desligado : begin
+				// deve ter algo aqui?
+        end
+
+        Ligado : begin
+		  
+            RA <= A;
+            RB <= B;
+        end
+
+        OpSoma : begin
+		  
+            RA <= A;
+            RB <= B;
+            OP <= 8'b0010_1011;
+            R <= A + B;
+        end
+
+        OpMult : begin
+		  
+            RA = A;
+            RB = B;
+            OP <= 8'b0111_1000;
+            R <= A * B;
+        end
+
+        OpSub : begin
+		  
+            RA <= A;
+            RB <= B;
+            OP <= 8'b0010_1101;
+            R <= A - B;
+        end
+		  
+    endcase
+end
+
+always @ (posedge clk)
+begin
+
+    if (!ON_OFF)
+    begin
+        estado_atual <= Desligado;
+        tempo = 0;
+    end
+	 
+    else
+    begin
+        case(estado_atual)
+		  
+            Desligado : begin
+				
+                tempo = tempo + 1;
+					 
+                if (ON_OFF && tempo >= 10)
+                begin
+                    estado_atual <= Ligado;
+                    tempo = 0;
+                end
+					 
+            end
+
+            Ligado : begin
+				
+                tempo = tempo + 1;
+					 
+                if (So)
+                begin
+					 
+                    if (tempo >= 10)
+                    begin
+                        estado_atual <= OpSoma;
+                        tempo = 0;
+                    end
+						  
+                end
+					 
+                else if (Sub)
+                begin
+					 
+                    if (tempo >= 10)
+                    begin
+                        estado_atual <= OpSub;
+                        tempo = 0;
+                    end
+                end
+					 
+                else if (Mult)
+                begin
+                    if (tempo >= 10)
+                    begin
+                        estado_atual <= OpMult;
+                        tempo = 0;
+                    end
+                end
+            end
+
+            OpSoma : begin
+				
+                tempo = tempo + 1;
+					 
+                if (!So && tempo >= 10)
+                begin
+                    estado_atual <= Ligado;
+                    tempo = 0;
+                end
+            end
+
+            OpMult : begin
+				
+                tempo = tempo + 1;
+					 
+                if (!Mult && tempo >= 10)
+                begin
+                    estado_atual <= Ligado;
+                    tempo = 0;
+                end
+            end
+
+            OpSub : begin
+				
+                tempo = tempo + 1;
+					 
+                if (!Sub && tempo >= 10)
+                begin
+                    estado_atual <= Ligado;
+                    tempo = 0;
+                end
+            end
+				
+        endcase
+    end
+end
+
+endmodule

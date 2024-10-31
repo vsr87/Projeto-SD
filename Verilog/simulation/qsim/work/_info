@@ -1,0 +1,82 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Users/abn2/Downloads/Verilog/simulation/qsim
+vhard_block
+Z0 !s110 1709142686
+!i10b 1
+!s100 X3ia9S2aL:c]^=JaTe[WR1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I3Fo380aO6zJQbbS]H:Cc?1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dD:/Users/belc/Desktop/Verilog/simulation/qsim
+Z4 w1709142685
+Z5 8Verilog1.vo
+Z6 FVerilog1.vo
+!i122 18
+L0 5986 34
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1709142686.000000
+Z9 !s107 Verilog1.vo|
+Z10 !s90 -work|work|Verilog1.vo|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+vVerilog1
+R0
+!i10b 1
+!s100 3SVd[?aUT::g^^<NW6dIk3
+R1
+IBPz7oOhzVR@jg9K:>X0HQ1
+R2
+R3
+R4
+R5
+R6
+!i122 18
+L0 32 5953
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@verilog1
+vVerilog1_vlg_vec_tst
+R0
+!i10b 1
+!s100 2n4nC96ZQmSAHc>D@Nekz3
+R1
+Iz>h<=;gkTNQMDWE>W7SCn3
+R2
+R3
+w1709142681
+8Waveform5.vwf.vt
+FWaveform5.vwf.vt
+!i122 19
+L0 30 170
+R7
+r1
+!s85 0
+31
+R8
+!s107 Waveform5.vwf.vt|
+!s90 -work|work|Waveform5.vwf.vt|
+!i113 1
+R11
+R12
+n@verilog1_vlg_vec_tst
